@@ -17,7 +17,6 @@ object ServiceGenerator {
 
     val httpClient = OkHttpClient.Builder()
         .addInterceptor(logging)
-        // Add other interceptors or configurations if needed
         .build()
 
     private val retrofit = Retrofit.Builder()
