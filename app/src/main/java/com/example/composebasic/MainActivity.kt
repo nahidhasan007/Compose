@@ -3,15 +3,20 @@ package com.example.composebasic
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModelProvider
@@ -46,7 +51,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeBasicTheme {
-                // A surface container using the 'background' color from the theme
                 Scaffold(
                     topBar = {
                         TopAppBar(
@@ -54,17 +58,23 @@ class MainActivity : ComponentActivity() {
                                 Text(
                                     text = "B2B Demo",
                                     textAlign = TextAlign.Center,
-                                    modifier = Modifier.padding(120.dp)
+                                    modifier = Modifier.padding(100.dp)
                                 )
                             }, colors = TopAppBarDefaults.largeTopAppBarColors(
                                 containerColor = Primary,
                                 titleContentColor = Color.White,
                             ),
                             navigationIcon = {
-//                                Icon(
-//                                    Icons.Default.ArrowBack,
-//                                    contentDescription = "Back"
-//                                )
+                                Icon(
+                                    Icons.Default.ArrowBack,
+                                    contentDescription = "Back",
+                                    tint = Color.White,
+                                    modifier = Modifier
+                                        .padding(start = 16.dp)
+                                        .clickable {
+                                            onBackPressed()
+                                        }
+                                )
                             }
                         )
                     }
