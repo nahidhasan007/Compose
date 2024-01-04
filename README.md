@@ -1,4 +1,5 @@
-Jetpack compose is a modern toolkit for building ui components. When it comes to android it makes life easier for android devs for creating android ui screens in a declarative way with less code compared to xml
+Jetpack compose is a modern toolkit for building ui components. When it comes to android it makes life easier for android devs for creating android ui screens in a declarative way using composable functions
+with less code compared to xml.
 
 Here i will try to demonstrate how i build an android app using jetpack compose.
 
