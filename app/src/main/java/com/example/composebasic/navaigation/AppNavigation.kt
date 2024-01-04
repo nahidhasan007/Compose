@@ -14,6 +14,7 @@ import com.example.composebasic.model.countryCode
 import com.example.composebasic.model.countryName
 import com.example.composebasic.screens.CountryDetails
 import com.example.composebasic.screens.CountryList
+import com.example.composebasic.screens.LoginScreen
 import com.example.composebasic.viewmodel.MainViewModel
 import com.example.composebasic.viewmodel.SharedViewModel
 
@@ -23,7 +24,10 @@ fun appNavigation(viewModel: MainViewModel?) {
 
 
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = Screen.Country.route) {
+    NavHost(navController = navController, startDestination = Screen.Login.route) {
+        composable(route = Screen.Login.route){
+            LoginScreen(navController)
+        }
         composable(route = Screen.Country.route) {
             CountryList(viewModel = viewModel, navController)
 

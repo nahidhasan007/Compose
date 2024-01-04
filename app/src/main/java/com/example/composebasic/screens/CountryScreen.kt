@@ -26,6 +26,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.composebasic.model.Nationality
+import com.example.composebasic.ui.theme.Primary
 import com.example.composebasic.viewmodel.MainViewModel
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -37,7 +38,7 @@ fun CountryList(viewModel: MainViewModel?, navController: NavController) {
 
     Box(
         modifier = Modifier
-            .background(color = Color.Blue) // Set your desired background color here
+            .background(color = Primary) // Set your desired background color here
     ) {
         Scaffold(
             topBar = {
@@ -46,14 +47,14 @@ fun CountryList(viewModel: MainViewModel?, navController: NavController) {
                         Text(text = "Country list",
                             textAlign = TextAlign.Justify,
                             modifier = Modifier
-                                .padding(start = 60.dp)
+                                .padding(start = 75.dp)
                                 .fillMaxWidth()
                                 .clickable {
                                     viewModel?.getCountry()
                                 })
                     },
                     colors = TopAppBarDefaults.smallTopAppBarColors(
-                        containerColor = MaterialTheme.colorScheme.primary,
+                        containerColor = Primary,
                         titleContentColor = Color.White
                     ),
                     navigationIcon = {

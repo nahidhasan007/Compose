@@ -35,7 +35,7 @@ import com.example.composebasic.viewmodel.SharedViewModel
 fun Country(country: Nationality, navController: NavController, viewModel: MainViewModel?) {
 
     val sharedViewModel: SharedViewModel = viewModel()
-    Row(modifier = Modifier.padding(top = 40.dp, start = 16.dp, end = 16.dp, bottom = 8.dp)) {
+    Row(modifier = Modifier.padding(top = 50.dp, start = 16.dp, end = 16.dp, bottom = 8.dp)) {
         Image(
             painter = painterResource(id = R.drawable.dp),
             contentDescription = "Profile Picture",
@@ -61,7 +61,7 @@ fun Country(country: Nationality, navController: NavController, viewModel: MainV
             country.name?.let {name->
                 Text(
                     text = name,
-                    color = MaterialTheme.colorScheme.primary,
+                    color = Color.Black,
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.padding(16.dp)
                 )

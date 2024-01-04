@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -21,6 +20,7 @@ import com.example.composebasic.network.EndPoint
 import com.example.composebasic.network.ServiceGenerator
 import com.example.composebasic.repo.CountryListRepo
 import com.example.composebasic.ui.theme.ComposeBasicTheme
+import com.example.composebasic.ui.theme.Primary
 import com.example.composebasic.viewmodel.MainVMF
 import com.example.composebasic.viewmodel.MainViewModel
 
@@ -54,12 +54,18 @@ class MainActivity : ComponentActivity() {
                                 Text(
                                     text = "B2B Demo",
                                     textAlign = TextAlign.Center,
-                                    modifier = Modifier.padding(100.dp)
+                                    modifier = Modifier.padding(120.dp)
                                 )
                             }, colors = TopAppBarDefaults.largeTopAppBarColors(
-                                containerColor = MaterialTheme.colorScheme.primary,
+                                containerColor = Primary,
                                 titleContentColor = Color.White,
-                            )
+                            ),
+                            navigationIcon = {
+//                                Icon(
+//                                    Icons.Default.ArrowBack,
+//                                    contentDescription = "Back"
+//                                )
+                            }
                         )
                     }
                 ) {
