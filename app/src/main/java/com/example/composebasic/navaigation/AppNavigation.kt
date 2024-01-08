@@ -28,7 +28,7 @@ fun appNavigation(viewModel: MainViewModel?) {
             LoginScreen(navController)
         }
         composable(route = Screen.Country.route) {
-            CountryList(viewModel = viewModel, navController)
+            CountryList(viewModel = viewModel, navController,sharedViewModel)
 
         }
         composable(

@@ -27,11 +27,12 @@ import androidx.navigation.NavController
 import com.example.composebasic.model.Nationality
 import com.example.composebasic.ui.theme.Primary
 import com.example.composebasic.viewmodel.MainViewModel
+import com.example.composebasic.viewmodel.SharedViewModel
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CountryList(viewModel: MainViewModel?, navController: NavController) {
+fun CountryList(viewModel: MainViewModel?, navController: NavController, sharedViewModel: SharedViewModel) {
 
     val countries: State<List<Nationality>>? = viewModel?.countries?.collectAsState()
 
@@ -80,6 +81,9 @@ fun CountryList(viewModel: MainViewModel?, navController: NavController) {
                     )
                 }
                 if (countries != null) {
+
+                    sharedViewModel.storeCountry(countries.value)
+
                     items(countries.value) { country ->
                         Country(country = country, navController, viewModel)
                     }
