@@ -1,12 +1,9 @@
 package com.example.composebasic.network
 
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import java.util.concurrent.TimeUnit
 
 object ServiceGenerator {
     const val base_url = "https://stg-b2b.api.sharetrip.net/api/v1/"

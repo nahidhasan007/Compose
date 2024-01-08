@@ -1,10 +1,11 @@
 package com.example.composebasic.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.ViewModel
 import com.example.composebasic.model.Nationality
-import kotlinx.coroutines.flow.MutableStateFlow
 
-class SharedViewModel(application: Application) : AndroidViewModel(application) {
+class SharedViewModel : ViewModel() {
+    var currentCountry : MutableState<Nationality> = mutableStateOf(Nationality("BAN","Bangladesh"))
 
 }

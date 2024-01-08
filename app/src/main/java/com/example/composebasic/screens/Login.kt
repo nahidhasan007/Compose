@@ -16,12 +16,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.currentCompositionLocalContext
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -112,9 +109,9 @@ fun LoginScreen(navController: NavController?) {
                         if (validateLogin(username, password)) {
                             navController?.navigate(route = Screen.Country.route)
                             Toast.makeText(context, "Login Successful!", Toast.LENGTH_SHORT).show()
-                        }
-                        else {
-                            Toast.makeText(context, "Invalid Credentials!", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(context, "Invalid Credentials!", Toast.LENGTH_SHORT)
+                                .show()
                         }
                     },
                     modifier = Modifier
