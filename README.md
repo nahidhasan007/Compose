@@ -3,7 +3,7 @@ with less code compared to xml.
 
 Here i will try to demonstrate how i build an android app using jetpack compose.
 
-Jetpack allows us to preview app design just like xml within a composable function withot a paramenter.
+Jetpack allows us to preview app design just like xml within a composable function without a paramenter.
 
 Colors, themes, typography and matrial3 componets are easy to use here.
 
