@@ -1,5 +1,6 @@
 package com.example.composebasic.screens
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
@@ -43,6 +44,12 @@ fun Country(country: Nationality, navController: NavController, viewModel: MainV
                 .size(40.dp)
                 .clip(CircleShape)
         )
+        AnimatedVisibility(visible = false) {
+            Text(
+                text = "Just for checking",
+                style = MaterialTheme.typography.bodySmall
+            )
+        }
 
         var isExpanded by remember {
             mutableStateOf(false)
@@ -56,9 +63,14 @@ fun Country(country: Nationality, navController: NavController, viewModel: MainV
             viewModel?.currentCountryState?.value = country
 //            sharedViewModel.currentCountry.value = country
 //            navController.currentBackStackEntry?.arguments?.putParcelable("country",country)
-            navController.navigate(route = Screen.CountryDetails.getRoute(country.name, country.code))
+            navController.navigate(
+                route = Screen.CountryDetails.getRoute(
+                    country.name,
+                    country.code
+                )
+            )
         }) {
-            country.name?.let {name->
+            country.name?.let { name ->
                 Text(
                     text = name,
                     color = Color.Black,
