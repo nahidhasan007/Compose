@@ -3,5 +3,6 @@
     <string name="flying_from">Flying From</string>
     <string name="flying_to">Flying To</string>
     <string name="fly_date">Fly Date</string>
+    <string name="travellers">Travellers</string>
     <string name="search_flights">Search Flights</string>
 </resources>

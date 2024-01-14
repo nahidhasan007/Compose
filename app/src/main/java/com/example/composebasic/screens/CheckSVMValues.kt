@@ -23,11 +23,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import com.example.composebasic.model.Screen
 import com.example.composebasic.viewmodel.SharedViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CheckCurrentValues(sharedViewModel: SharedViewModel) {
+fun CheckCurrentValues(sharedViewModel: SharedViewModel, navController: NavController?) {
     var country: String by remember { mutableStateOf("") }
     val context = LocalContext.current
     Column(
@@ -65,7 +67,9 @@ fun CheckCurrentValues(sharedViewModel: SharedViewModel) {
                     if (it.name == country) {
                         Toast.makeText(context, "${country} found", Toast.LENGTH_SHORT).show()
                     }
+
                 }
+                navController?.navigate(Screen.OneWay.route)
             },
             modifier = Modifier
                 .height(40.dp) // Adjust the height of the button as needed

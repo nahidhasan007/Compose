@@ -3,6 +3,7 @@ package com.example.composebasic.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.example.composebasic.model.FlightSearchBody
 import com.example.composebasic.model.Nationality
 import com.example.composebasic.repo.CountryListRepo
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -32,6 +33,12 @@ class MainViewModel(private val repo: CountryListRepo) : ViewModel() {
         }
     }
 
+    fun getFlights(searchBody: FlightSearchBody)
+    {
+         viewModelScope.launch {
+             val flights = repo.getFlight(searchBody)
+         }
+    }
     private fun operationOnResponse(data: List<Nationality>) {
         _countries.value = data
     }

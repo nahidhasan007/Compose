@@ -10,6 +10,8 @@ sealed class Screen(val route: String) {
     object Country : Screen(route = "country")
 
     object CheckVM : Screen(route = "checkVm")
+
+    object OneWay : Screen(route = "oneway")
     object CountryDetails :
         Screen(route = "country_details" + "/{$countryName}" + "/{$countryCode}") {
         fun getRoute(name: String, code: String): String {

@@ -15,6 +15,7 @@ import com.example.composebasic.screens.CheckCurrentValues
 import com.example.composebasic.screens.CountryDetails
 import com.example.composebasic.screens.CountryList
 import com.example.composebasic.screens.LoginScreen
+import com.example.composebasic.screens.OneWaySearch
 import com.example.composebasic.viewmodel.MainViewModel
 import com.example.composebasic.viewmodel.SharedViewModel
 
@@ -54,7 +55,11 @@ fun appNavigation(viewModel: MainViewModel?) {
         }
         
         composable(route = Screen.CheckVM.route){
-            CheckCurrentValues(sharedViewModel = sharedViewModel)
+            CheckCurrentValues(sharedViewModel = sharedViewModel, navController)
+        }
+
+        composable(route = Screen.OneWay.route){
+            OneWaySearch(viewModel)
         }
     }
 }
